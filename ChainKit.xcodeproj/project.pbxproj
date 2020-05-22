@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2CBE203D24783D710071BF1B /* ChainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBE203B24783D710071BF1B /* ChainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CBE204624783F380071BF1B /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204524783F380071BF1B /* Chain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CBE203824783D710071BF1B /* ChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE203B24783D710071BF1B /* ChainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainKit.h; sourceTree = "<group>"; };
 		2CBE203C24783D710071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CBE204524783F380071BF1B /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		2CBE203A24783D710071BF1B /* ChainKit */ = {
 			isa = PBXGroup;
 			children = (
+				2CBE204424783F2D0071BF1B /* Chain */,
 				2CBE204324783E890071BF1B /* Supporting Files */,
 			);
 			path = ChainKit;
@@ -58,6 +61,14 @@
 				2CBE203C24783D710071BF1B /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CBE204424783F2D0071BF1B /* Chain */ = {
+			isa = PBXGroup;
+			children = (
+				2CBE204524783F380071BF1B /* Chain.swift */,
+			);
+			path = Chain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +114,7 @@
 				TargetAttributes = {
 					2CBE203724783D710071BF1B = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -139,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBE204624783F380071BF1B /* Chain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +281,7 @@
 		2CBE204124783D710071BF1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CJZWD577A7;
@@ -286,6 +300,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -294,6 +309,7 @@
 		2CBE204224783D710071BF1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CJZWD577A7;
