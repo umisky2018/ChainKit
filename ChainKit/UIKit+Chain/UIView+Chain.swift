@@ -11,12 +11,12 @@ import UIKit
 extension Chain where Base: UIView {
     
     @discardableResult
-    public static func make(closure: (ViewChain<Base>) -> Void) -> Base {
+    public static func make(_ closure: (ViewChain<Base>) -> Void) -> Base {
         let instance = Base()
         closure(ViewChain(instance))
         return instance
     }
-
+    
     @discardableResult
     public func make(_ closure: (ViewChain<Base>) -> Void) -> Base {
         closure(ViewChain(self.base))
@@ -189,6 +189,7 @@ extension ViewChain where ViewBase: UIView {
         return self
     }
     
+    /// UIView function
     @discardableResult
     public func shadow(color: UIColor) -> Self {
         base.layer.shadowColor = color.cgColor
@@ -269,6 +270,12 @@ extension ViewChain where ViewBase: UIView {
         var frame = base.frame
         frame.size = CGSize(width: width, height: height)
         base.frame = frame
+        return self
+    }
+    
+    @discardableResult
+    public func frame(x: CGFloat = 0, y: CGFloat = 0, width: CGFloat, height: CGFloat) -> Self {
+        self.frame(CGRect(x: x, y: y, width: width, height: height))
         return self
     }
 }

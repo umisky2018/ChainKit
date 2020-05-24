@@ -20,7 +20,35 @@
 		2CBE206024784B3E0071BF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE205E24784B3E0071BF1B /* Main.storyboard */; };
 		2CBE206224784B400071BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE206124784B400071BF1B /* Assets.xcassets */; };
 		2CBE206524784B400071BF1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE206324784B400071BF1B /* LaunchScreen.storyboard */; };
+		2CBE20762478D81D0071BF1B /* ChainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBE203824783D710071BF1B /* ChainKit.framework */; };
+		2CBE20772478D81D0071BF1B /* ChainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBE203824783D710071BF1B /* ChainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CBE207F24795FA30071BF1B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE207E24795FA30071BF1B /* Theme.swift */; };
+		2CBE2087247A4AED0071BF1B /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2086247A4AED0071BF1B /* ViewConfigurator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CBE20782478D81D0071BF1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CBE202F24783D710071BF1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CBE203724783D710071BF1B;
+			remoteInfo = ChainKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2CBE207A2478D81D0071BF1B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2CBE20772478D81D0071BF1B /* ChainKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2CBE203824783D710071BF1B /* ChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +68,8 @@
 		2CBE206124784B400071BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBE206424784B400071BF1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CBE206624784B400071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CBE207E24795FA30071BF1B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2CBE2086247A4AED0071BF1B /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBE20762478D81D0071BF1B /* ChainKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +97,7 @@
 				2CBE205724784B3E0071BF1B /* ChainDemo */,
 				2CBE203A24783D710071BF1B /* ChainKit */,
 				2CBE203924783D710071BF1B /* Products */,
+				2CBE20752478D81D0071BF1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +152,7 @@
 		2CBE205724784B3E0071BF1B /* ChainDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2CBE207D24795F9D0071BF1B /* Theme */,
 				2CBE205824784B3E0071BF1B /* AppDelegate.swift */,
 				2CBE205A24784B3E0071BF1B /* SceneDelegate.swift */,
 				2CBE205C24784B3E0071BF1B /* ViewController.swift */,
@@ -129,6 +162,22 @@
 				2CBE206624784B400071BF1B /* Info.plist */,
 			);
 			path = ChainDemo;
+			sourceTree = "<group>";
+		};
+		2CBE20752478D81D0071BF1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CBE207D24795F9D0071BF1B /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2CBE207E24795FA30071BF1B /* Theme.swift */,
+				2CBE2086247A4AED0071BF1B /* ViewConfigurator.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +219,12 @@
 				2CBE205224784B3E0071BF1B /* Sources */,
 				2CBE205324784B3E0071BF1B /* Frameworks */,
 				2CBE205424784B3E0071BF1B /* Resources */,
+				2CBE207A2478D81D0071BF1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2CBE20792478D81D0071BF1B /* PBXTargetDependency */,
 			);
 			name = ChainDemo;
 			productName = ChainDemo;
@@ -257,12 +308,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBE205D24784B3E0071BF1B /* ViewController.swift in Sources */,
+				2CBE2087247A4AED0071BF1B /* ViewConfigurator.swift in Sources */,
+				2CBE207F24795FA30071BF1B /* Theme.swift in Sources */,
 				2CBE205924784B3E0071BF1B /* AppDelegate.swift in Sources */,
 				2CBE205B24784B3E0071BF1B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CBE20792478D81D0071BF1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CBE203724783D710071BF1B /* ChainKit */;
+			targetProxy = 2CBE20782478D81D0071BF1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2CBE205E24784B3E0071BF1B /* Main.storyboard */ = {
