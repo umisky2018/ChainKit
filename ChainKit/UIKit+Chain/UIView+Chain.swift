@@ -290,3 +290,40 @@ extension ViewChain where ViewBase: UIView {
         return self
     }
 }
+
+// MARK: - Actions
+
+private var handlerKey = "handlerKey"
+
+extension ViewChain where ViewBase: UIView {
+    
+    @discardableResult
+    public func addTapGesture(action: @escaping () -> Void) -> Self {
+        let wrapper = associatedObject(self.base, key: &handlerKey, initial: { TapActionWrapper() })
+        wrapper.append(action: action)
+        let tap = UITapGestureRecognizer(target: wrapper, action: #selector(TapActionWrapper.executeAction))
+        setAssociatedObject(self.base, key: &handlerKey, value: wrapper)
+        self.add(gestureRecognizer: tap)
+        return self
+    }
+}
+
+// MARK: - Wrapper
+
+internal class TapActionWrapper {
+    
+    typealias Action = () -> Void
+    
+    private var actions: [Action] = []
+    
+    internal init() { }
+    
+    internal func append(action: @escaping Action) {
+        self.actions.append(action)
+    }
+    
+    @objc
+    internal func executeAction(recognizer: UITapGestureRecognizer) {
+        self.actions.forEach{ $0() }
+    }
+}

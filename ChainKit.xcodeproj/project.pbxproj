@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C18C64A24837C8800C01A77 /* Associate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18C64924837C8800C01A77 /* Associate.swift */; };
 		2CBE203D24783D710071BF1B /* ChainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBE203B24783D710071BF1B /* ChainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CBE204624783F380071BF1B /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204524783F380071BF1B /* Chain.swift */; };
 		2CBE2049247842180071BF1B /* ViewChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2048247842180071BF1B /* ViewChain.swift */; };
@@ -15,7 +16,6 @@
 		2CBE204F247844020071BF1B /* UILabel+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204E247844010071BF1B /* UILabel+Chain.swift */; };
 		2CBE20512478444A0071BF1B /* UIButton+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE20502478444A0071BF1B /* UIButton+Chain.swift */; };
 		2CBE205924784B3E0071BF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE205824784B3E0071BF1B /* AppDelegate.swift */; };
-		2CBE205B24784B3E0071BF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE205A24784B3E0071BF1B /* SceneDelegate.swift */; };
 		2CBE205D24784B3E0071BF1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE205C24784B3E0071BF1B /* ViewController.swift */; };
 		2CBE206024784B3E0071BF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE205E24784B3E0071BF1B /* Main.storyboard */; };
 		2CBE206224784B400071BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE206124784B400071BF1B /* Assets.xcassets */; };
@@ -51,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C18C64924837C8800C01A77 /* Associate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associate.swift; sourceTree = "<group>"; };
 		2CBE203824783D710071BF1B /* ChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE203B24783D710071BF1B /* ChainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainKit.h; sourceTree = "<group>"; };
 		2CBE203C24783D710071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		2CBE20502478444A0071BF1B /* UIButton+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Chain.swift"; sourceTree = "<group>"; };
 		2CBE205624784B3E0071BF1B /* ChainDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChainDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE205824784B3E0071BF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CBE205A24784B3E0071BF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CBE205C24784B3E0071BF1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CBE205F24784B3E0071BF1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CBE206124784B400071BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBE204524783F380071BF1B /* Chain.swift */,
+				2C18C64924837C8800C01A77 /* Associate.swift */,
 			);
 			path = Chain;
 			sourceTree = "<group>";
@@ -154,7 +155,6 @@
 			children = (
 				2CBE207D24795F9D0071BF1B /* Theme */,
 				2CBE205824784B3E0071BF1B /* AppDelegate.swift */,
-				2CBE205A24784B3E0071BF1B /* SceneDelegate.swift */,
 				2CBE205C24784B3E0071BF1B /* ViewController.swift */,
 				2CBE205E24784B3E0071BF1B /* Main.storyboard */,
 				2CBE206124784B400071BF1B /* Assets.xcassets */,
@@ -296,6 +296,7 @@
 			files = (
 				2CBE204F247844020071BF1B /* UILabel+Chain.swift in Sources */,
 				2CBE20512478444A0071BF1B /* UIButton+Chain.swift in Sources */,
+				2C18C64A24837C8800C01A77 /* Associate.swift in Sources */,
 				2CBE204B247842410071BF1B /* UIView+Chain.swift in Sources */,
 				2CBE204D247843A70071BF1B /* UIControl+Chain.swift in Sources */,
 				2CBE2049247842180071BF1B /* ViewChain.swift in Sources */,
@@ -311,7 +312,6 @@
 				2CBE2087247A4AED0071BF1B /* ViewConfigurator.swift in Sources */,
 				2CBE207F24795FA30071BF1B /* Theme.swift in Sources */,
 				2CBE205924784B3E0071BF1B /* AppDelegate.swift in Sources */,
-				2CBE205B24784B3E0071BF1B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

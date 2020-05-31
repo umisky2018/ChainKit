@@ -18,7 +18,7 @@ enum Theme {
 extension Theme {
     
     static var current: Theme {
-        return .dark
+        return .light
     }
 }
 
