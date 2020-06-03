@@ -9,14 +9,14 @@
 import UIKit
 import ChainKit
 
-extension ViewChain where ViewBase: UIView {
-    
+extension Chain where Base: UIView {
+
     @discardableResult
     func makeDefaultView() -> Self {
         self.background(color: Theme.current.backgroundColor)
         return self
     }
-    
+
     @discardableResult
     func makeDefaultShdow() -> Self {
         self.shadow(color: Theme.current.shadowColor)
@@ -25,4 +25,11 @@ extension ViewChain where ViewBase: UIView {
             .shadow(opacity: 0.5)
         return self
     }
+    
+    @discardableResult
+    func makeMainColor() -> Self {
+        self.background(color: Theme.current.mainColor)
+        return self
+    }
+
 }

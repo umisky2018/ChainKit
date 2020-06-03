@@ -14,27 +14,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.chain.make {
-            $0  .makeDefaultView()
-        }
-
-        UIView.chain.make {
-            $0  .makeDefaultShdow()
-                .frame(x: 100, y: 200, width: 200, height: 200)
-                .background(color: Theme.current.mainColor)
-                .addTapGesture(action: { [weak self] in
-                    guard let this = self else { return }
-                    let ctrl = ViewController()
-                    this.navigationController?.pushViewController(ctrl, animated: true)
-                })
-                .addTapGesture(action: {
-                    print("tap_1")
-                })
-                .addTapGesture(action: {
-                    print("tap_2")
-                })
-                .add(to: self.view)
-        }
+        self.view.chain
+            .makeDefaultView()
+        
+        UIButton().chain
+            .makeMainColor()
+            .makeDefaultShdow()
+            .frame(x: 100, y: 200, width: 200, height: 100)
+            .corner(radius: 50)
+            .addTap(target: self, action: #selector(aaa))
+            .addAction(action: { _ in
+                print("456")
+            })
+            .add(to: self.view)
+    }
+    
+    @objc
+    func aaa() {
+        print("123")
     }
     
     deinit {

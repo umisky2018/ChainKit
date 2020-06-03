@@ -279,23 +279,29 @@ extension Chain where Base: UIView {
 
 // MARK: - Actions
 
-private var tapActionWrapper = "tapActionWrapper"
+private var tapActionWrapperKey = "tapActionWrapperKey"
 
 extension Chain where Base: UIView {
-
+    
+    @discardableResult
+    public func addTap(target: Any?, action: Selector) -> Self {
+        let tap = UITapGestureRecognizer(target: target, action: action)
+        self.base.addGestureRecognizer(tap)
+        return self
+    }
+    
     @discardableResult
     public func addTap(action: @escaping () -> Void) -> Self {
-        let wrapper = associatedObject(self.base, key: &tapActionWrapper, initial: { TapActionWrapper() })
+        let wrapper = associatedObject(self.base, key: &tapActionWrapperKey, initial: { TapActionWrapper() })
         wrapper.append(action: action)
         let tap = UITapGestureRecognizer(target: wrapper, action: #selector(TapActionWrapper.executeAction))
-        setAssociatedObject(self.base, key: &tapActionWrapper, value: wrapper)
         self.base.addGestureRecognizer(tap)
         return self
     }
     
     @discardableResult
     public func removeAllTapAction() -> Self {
-        let wrapper = associatedObject(self.base, key: &tapActionWrapper, initial: { TapActionWrapper() })
+        let wrapper = associatedObject(self.base, key: &tapActionWrapperKey, initial: { TapActionWrapper() })
         wrapper.removeAllAction()
         self.base.gestureRecognizers?
             .filter { $0 is UITapGestureRecognizer }
