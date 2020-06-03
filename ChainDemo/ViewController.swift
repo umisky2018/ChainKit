@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             .makeDefaultShdow()
             .frame(x: 100, y: 200, width: 200, height: 100)
             .corner(radius: 50)
-            .addTap(target: self, action: #selector(aaa))
+//            .addTap(target: self, action: #selector(aaa))
             .addAction(action: { _ in
                 print("456")
             })

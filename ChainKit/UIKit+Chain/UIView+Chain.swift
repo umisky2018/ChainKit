@@ -283,51 +283,32 @@ private var tapActionWrapperKey = "tapActionWrapperKey"
 
 extension Chain where Base: UIView {
     
-    @discardableResult
-    public func addTap(target: Any?, action: Selector) -> Self {
-        let tap = UITapGestureRecognizer(target: target, action: action)
-        self.base.addGestureRecognizer(tap)
-        return self
-    }
+//    @discardableResult
+//    public func addTap(target: Any?, action: Selector) -> Self {
+//        let tap = UITapGestureRecognizer().chain.addAction
+//        self.base.addGestureRecognizer(tap)
+//        return self
+//    }
     
     @discardableResult
     public func addTap(action: @escaping () -> Void) -> Self {
-        let wrapper = associatedObject(self.base, key: &tapActionWrapperKey, initial: { TapActionWrapper() })
-        wrapper.append(action: action)
-        let tap = UITapGestureRecognizer(target: wrapper, action: #selector(TapActionWrapper.executeAction))
-        self.base.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer().chain
+            .addAction(action: { _ in
+                action()
+            })
+            .base
+        base.addGestureRecognizer(tap)
         return self
     }
     
     @discardableResult
     public func removeAllTapAction() -> Self {
-        let wrapper = associatedObject(self.base, key: &tapActionWrapperKey, initial: { TapActionWrapper() })
-        wrapper.removeAllAction()
-        self.base.gestureRecognizers?
+        base.gestureRecognizers?
             .filter { $0 is UITapGestureRecognizer }
-            .forEach { self.base.removeGestureRecognizer($0) }
+            .forEach ({
+                $0.chain.removeAllActions()
+                base.removeGestureRecognizer($0)
+            })
         return self
-    }
-}
-
-internal class TapActionWrapper {
-    
-    typealias Action = () -> Void
-    
-    private var actions: [Action] = []
-    
-    internal init() { }
-    
-    internal func append(action: @escaping Action) {
-        self.actions.append(action)
-    }
-    
-    internal func removeAllAction() {
-        self.actions.removeAll()
-    }
-    
-    @objc
-    internal func executeAction(recognizer: UITapGestureRecognizer) {
-        self.actions.forEach{ $0() }
     }
 }
