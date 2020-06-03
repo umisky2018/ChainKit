@@ -23,6 +23,7 @@
 		2CBE20772478D81D0071BF1B /* ChainKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBE203824783D710071BF1B /* ChainKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CBE207F24795FA30071BF1B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE207E24795FA30071BF1B /* Theme.swift */; };
 		2CBE2087247A4AED0071BF1B /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2086247A4AED0071BF1B /* ViewConfigurator.swift */; };
+		2CCBEEC52487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBEEC42487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		2CBE206624784B400071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBE207E24795FA30071BF1B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2CBE2086247A4AED0071BF1B /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
+		2CCBEEC42487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Chain.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				2CBE204E247844010071BF1B /* UILabel+Chain.swift */,
 				2CBE204C247843A70071BF1B /* UIControl+Chain.swift */,
 				2CBE20502478444A0071BF1B /* UIButton+Chain.swift */,
+				2CCBEEC42487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift */,
 			);
 			path = "UIKit+Chain";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				2CBE204F247844020071BF1B /* UILabel+Chain.swift in Sources */,
 				2CBE20512478444A0071BF1B /* UIButton+Chain.swift in Sources */,
 				2C18C64A24837C8800C01A77 /* Associate.swift in Sources */,
+				2CCBEEC52487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift in Sources */,
 				2CBE204B247842410071BF1B /* UIView+Chain.swift in Sources */,
 				2CBE204D247843A70071BF1B /* UIControl+Chain.swift in Sources */,
 				2CBE204624783F380071BF1B /* Chain.swift in Sources */,
