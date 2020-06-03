@@ -10,7 +10,6 @@
 		2C18C64A24837C8800C01A77 /* Associate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18C64924837C8800C01A77 /* Associate.swift */; };
 		2CBE203D24783D710071BF1B /* ChainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBE203B24783D710071BF1B /* ChainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CBE204624783F380071BF1B /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204524783F380071BF1B /* Chain.swift */; };
-		2CBE2049247842180071BF1B /* ViewChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2048247842180071BF1B /* ViewChain.swift */; };
 		2CBE204B247842410071BF1B /* UIView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204A247842410071BF1B /* UIView+Chain.swift */; };
 		2CBE204D247843A70071BF1B /* UIControl+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204C247843A70071BF1B /* UIControl+Chain.swift */; };
 		2CBE204F247844020071BF1B /* UILabel+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204E247844010071BF1B /* UILabel+Chain.swift */; };
@@ -56,7 +55,6 @@
 		2CBE203B24783D710071BF1B /* ChainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainKit.h; sourceTree = "<group>"; };
 		2CBE203C24783D710071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBE204524783F380071BF1B /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
-		2CBE2048247842180071BF1B /* ViewChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChain.swift; sourceTree = "<group>"; };
 		2CBE204A247842410071BF1B /* UIView+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Chain.swift"; sourceTree = "<group>"; };
 		2CBE204C247843A70071BF1B /* UIControl+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Chain.swift"; sourceTree = "<group>"; };
 		2CBE204E247844010071BF1B /* UILabel+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Chain.swift"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		2CBE2047247841400071BF1B /* UIKit+Chain */ = {
 			isa = PBXGroup;
 			children = (
-				2CBE2048247842180071BF1B /* ViewChain.swift */,
 				2CBE204A247842410071BF1B /* UIView+Chain.swift */,
 				2CBE204E247844010071BF1B /* UILabel+Chain.swift */,
 				2CBE204C247843A70071BF1B /* UIControl+Chain.swift */,
@@ -299,7 +296,6 @@
 				2C18C64A24837C8800C01A77 /* Associate.swift in Sources */,
 				2CBE204B247842410071BF1B /* UIView+Chain.swift in Sources */,
 				2CBE204D247843A70071BF1B /* UIControl+Chain.swift in Sources */,
-				2CBE2049247842180071BF1B /* ViewChain.swift in Sources */,
 				2CBE204624783F380071BF1B /* Chain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

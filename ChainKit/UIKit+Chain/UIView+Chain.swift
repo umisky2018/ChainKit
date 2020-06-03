@@ -8,25 +8,11 @@
 
 import UIKit
 
-extension Chain where Base: UIView {
-    
-    @discardableResult
-    public static func make(_ closure: (ViewChain<Base>) -> Void) -> Base {
-        let instance = Base()
-        closure(ViewChain(instance))
-        return instance
-    }
-    
-    @discardableResult
-    public func make(_ closure: (ViewChain<Base>) -> Void) -> Base {
-        closure(ViewChain(self.base))
-        return self.base
-    }
-}
+extension UIView: ChainCompatible { }
 
 // MARK: - Normal
 
-extension ViewChain where ViewBase: UIView {
+extension Chain where Base: UIView {
     
     @discardableResult
     public func userInteraction(enabled: Bool) -> Self {
@@ -169,7 +155,7 @@ extension ViewChain where ViewBase: UIView {
 
 // MARK: - CALayer
 
-extension ViewChain where ViewBase: UIView {
+extension Chain where Base: UIView {
     
     @discardableResult
     public func corner(radius: CGFloat) -> Self {
@@ -223,7 +209,7 @@ extension ViewChain where ViewBase: UIView {
 
 // MARK: - Custom Frame
 
-extension ViewChain where ViewBase: UIView {
+extension Chain where Base: UIView {
     
     @discardableResult
     public func x(_ x: CGFloat) -> Self {
@@ -282,7 +268,7 @@ extension ViewChain where ViewBase: UIView {
 
 // MARK: - Custom Others
 
-extension ViewChain where ViewBase: UIView {
+extension Chain where Base: UIView {
     
     @discardableResult
     public func add(to superView: UIView) -> Self {
@@ -293,22 +279,30 @@ extension ViewChain where ViewBase: UIView {
 
 // MARK: - Actions
 
-private var handlerKey = "handlerKey"
+private var tapActionWrapper = "tapActionWrapper"
 
-extension ViewChain where ViewBase: UIView {
-    
+extension Chain where Base: UIView {
+
     @discardableResult
-    public func addTapGesture(action: @escaping () -> Void) -> Self {
-        let wrapper = associatedObject(self.base, key: &handlerKey, initial: { TapActionWrapper() })
+    public func addTap(action: @escaping () -> Void) -> Self {
+        let wrapper = associatedObject(self.base, key: &tapActionWrapper, initial: { TapActionWrapper() })
         wrapper.append(action: action)
         let tap = UITapGestureRecognizer(target: wrapper, action: #selector(TapActionWrapper.executeAction))
-        setAssociatedObject(self.base, key: &handlerKey, value: wrapper)
-        self.add(gestureRecognizer: tap)
+        setAssociatedObject(self.base, key: &tapActionWrapper, value: wrapper)
+        self.base.addGestureRecognizer(tap)
+        return self
+    }
+    
+    @discardableResult
+    public func removeAllTapAction() -> Self {
+        let wrapper = associatedObject(self.base, key: &tapActionWrapper, initial: { TapActionWrapper() })
+        wrapper.removeAllAction()
+        self.base.gestureRecognizers?
+            .filter { $0 is UITapGestureRecognizer }
+            .forEach { self.base.removeGestureRecognizer($0) }
         return self
     }
 }
-
-// MARK: - Wrapper
 
 internal class TapActionWrapper {
     
@@ -320,6 +314,10 @@ internal class TapActionWrapper {
     
     internal func append(action: @escaping Action) {
         self.actions.append(action)
+    }
+    
+    internal func removeAllAction() {
+        self.actions.removeAll()
     }
     
     @objc

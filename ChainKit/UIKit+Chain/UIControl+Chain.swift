@@ -11,7 +11,3 @@ import UIKit
 extension Chain where Base: UIControl {
     
 }
-
-extension ViewChain where ViewBase: UIControl {
-    
-}

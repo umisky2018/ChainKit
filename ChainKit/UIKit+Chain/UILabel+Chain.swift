@@ -10,10 +10,6 @@ import UIKit
 
 extension Chain where Base: UILabel {
     
-}
-
-extension ViewChain where ViewBase: UILabel {
-    
     @discardableResult
     public func font(_ font: UIFont) -> Self {
         base.font = font

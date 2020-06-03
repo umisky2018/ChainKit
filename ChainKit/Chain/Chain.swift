@@ -32,12 +32,11 @@ public extension ChainCompatible {
     }
 }
 
-/// wrapper
 public struct Chain<Base> {
     
     public var base: Base
     
-    init(_ base: Base) {
+    internal init(_ base: Base) {
         self.base = base
     }
 }
