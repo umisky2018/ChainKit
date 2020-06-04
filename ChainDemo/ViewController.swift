@@ -17,11 +17,21 @@ class ViewController: UIViewController {
         self.view.chain
             .makeDefaultView()
         
-        UIButton().chain
+        UIButton(type: .system).chain
             .makeMainColor()
             .makeDefaultShdow()
             .frame(x: 100, y: 500, width: 200, height: 45)
             .addTarget(self, action: #selector(aaa))
+            .title(text: "Button", for: .normal)
+            .title(front: .systemFont(ofSize: 24))
+            .addAction(for: [.touchDown, .touchDragEnter], action: {
+                $0.chain.makeLightShdow()
+                $0.chain.title(front: .systemFont(ofSize: 20))
+            })
+            .addAction(for: [.touchUpOutside, .touchUpInside, .touchCancel, .touchDragExit], action: {
+                $0.chain.makeDefaultShdow()
+                    .title(front: .systemFont(ofSize: 24))
+            })
             .add(to: self.view)
                 
         UIView().chain

@@ -21,8 +21,17 @@ extension Chain where Base: UIView {
     func makeDefaultShdow() -> Self {
         self.shadow(color: Theme.current.shadowColor)
             .shadow(offset: CGSize(width: 3, height: 3))
-            .shadow(radius: 10)
-            .shadow(opacity: 0.5)
+            .shadow(radius: 5)
+            .shadow(opacity: 0.75)
+        return self
+    }
+    
+    @discardableResult
+    func makeLightShdow() -> Self {
+        self.shadow(color: Theme.current.shadowColor)
+            .shadow(offset: CGSize(width: 1, height: 1))
+            .shadow(radius: 2)
+            .shadow(opacity: 0.9)
         return self
     }
     
