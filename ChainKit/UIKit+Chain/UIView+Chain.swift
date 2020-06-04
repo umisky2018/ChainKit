@@ -135,12 +135,6 @@ extension Chain where Base: UIView {
     }
     
     @discardableResult
-    public func add(subView: UIView) -> Self {
-        base.addSubview(subView)
-        return self
-    }
-    
-    @discardableResult
     public func add(gestureRecognizer: UIGestureRecognizer) -> Self {
         base.addGestureRecognizer(gestureRecognizer)
         return self
@@ -279,13 +273,67 @@ extension Chain where Base: UIView {
     }
 }
 
-// MARK: - Custom Others
+// MARK: - Move
 
 extension Chain where Base: UIView {
     
     @discardableResult
-    public func add(to superView: UIView) -> Self {
-        superView.addSubview(base)
+    public func add(subView: UIView) -> Self {
+        base.addSubview(subView)
+        return self
+    }
+    
+    @discardableResult
+    public func add(to superView: UIView?) -> Self {
+        superView?.addSubview(base)
+        return self
+    }
+
+    @discardableResult
+    public func bringSubviewToFront(_ view: UIView) -> Self {
+        base.bringSubviewToFront(view)
+        return self
+    }
+    
+    @discardableResult
+    public func sendSubviewToBack(_ view: UIView) -> Self {
+        base.sendSubviewToBack(view)
+        return self
+    }
+
+    @discardableResult
+    public func bringToFront() -> Self {
+        base.superview?.bringSubviewToFront(base)
+        return self
+    }
+
+    @discardableResult
+    public func sendToBack() -> Self {
+        base.superview?.sendSubviewToBack(base)
+        return self
+    }
+
+    @discardableResult
+    public func insertSubview(_ view: UIView, belowSubview siblingSubview: UIView) -> Self {
+        base.insertSubview(view, belowSubview: siblingSubview)
+        return self
+    }
+
+    @discardableResult
+    public func insertSubview(_ view: UIView, aboveSubview siblingSubview: UIView) -> Self {
+        base.insertSubview(view, aboveSubview: siblingSubview)
+        return self
+    }
+
+    @discardableResult
+    public func insertBelow(_ view: UIView) -> Self {
+        base.superview?.insertSubview(base, belowSubview: view)
+        return self
+    }
+    
+    @discardableResult
+    public func insertAbove(_ view: UIView) -> Self {
+        base.superview?.insertSubview(base, aboveSubview: view)
         return self
     }
 }

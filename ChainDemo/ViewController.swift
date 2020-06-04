@@ -36,11 +36,11 @@ class ViewController: UIViewController {
             })
             .add(to: self.view)
         
-         let v = UIView().chain
+        UIView().chain
             .makeMainColor()
             .makeDefaultShdow()
             .frame(x: 100, y: 200, width: 200, height: 40)
-            .corner(radius: 50)
+            .corner(radius: 20)
             .tap(action: {
                 print("456")
             })
@@ -52,11 +52,6 @@ class ViewController: UIViewController {
                 print("789")
             })
             .add(to: self.view)
-            .clipsToBounds(true)
-            .base
-        
-        UIImageView(image: UIImage(named: "cheerUp")).chain
-            .add(to: v)
         
         UITapGestureRecognizer().chain
             .addTapAction(action: { _ in

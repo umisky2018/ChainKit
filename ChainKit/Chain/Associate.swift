@@ -37,7 +37,7 @@ internal func setAssociatedObject<T>(_ host: AnyObject, key: UnsafeRawPointer, v
 ///   - host: 持有者
 ///   - key: 键
 /// - Returns: 值
-internal func getAssociatedObject<T>(_ host: Any, key: UnsafeRawPointer) -> T? {
+internal func getAssociatedObject<T>(_ host: AnyObject, key: UnsafeRawPointer) -> T? {
     let value = objc_getAssociatedObject(host, key) as? T
     return value
 }
