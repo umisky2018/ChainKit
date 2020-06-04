@@ -34,9 +34,17 @@ public extension ChainCompatible {
 
 public struct Chain<Base> {
     
-    public var base: Base
+    internal var base: Base
     
     internal init(_ base: Base) {
         self.base = base
+    }
+}
+
+extension Chain {
+    
+    /// 原始对象
+    public var value: Base {
+        return self.base
     }
 }

@@ -76,7 +76,7 @@ extension Chain where Base: UIGestureRecognizer {
 
 // MARK: - Action Wrapper
 
-fileprivate class GestureRecognizerActionWrapper {
+fileprivate class GestureRecognizerActionWrapper: NSObject {
     
     fileprivate typealias Action = (UIGestureRecognizer) -> Void
     

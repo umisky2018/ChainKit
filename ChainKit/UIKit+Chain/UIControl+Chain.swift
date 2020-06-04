@@ -95,9 +95,9 @@ private var controlEventActionKey = "controlEventActionKey"
 
 extension Chain where Base: UIControl {
     
-    public func addAction(for controlEvent: UIControl.Event = .touchUpInside, action: @escaping (UIButton) -> Void) -> Self {
+    public func addAction(for controlEvent: UIControl.Event = .touchUpInside, action: @escaping (Chain<Base>) -> Void) -> Self {
         var wrapperList = associatedObject(self.base, key: &controlEventActionKey, initial: { [ControlEventActionWrapper]() })
-        let wrapper = ControlEventActionWrapper(action)
+        let wrapper = ControlEventActionWrapper { if let control = $0 as? Base { action(Chain(control)) }}
         wrapperList.append(wrapper)
         setAssociatedObject(self.base, key: &controlEventActionKey, value: wrapperList)
         self.base.addTarget(wrapper, action: #selector(ControlEventActionWrapper.executeAction), for: controlEvent)
@@ -107,7 +107,7 @@ extension Chain where Base: UIControl {
 
 fileprivate class ControlEventActionWrapper: NSObject {
     
-    typealias Action = (UIButton) -> Void
+    typealias Action = (UIControl) -> Void
     
     private var action: Action
     
@@ -116,7 +116,7 @@ fileprivate class ControlEventActionWrapper: NSObject {
     }
     
     @objc
-    fileprivate func executeAction(sender: UIButton) {
+    fileprivate func executeAction(sender: UIControl) {
         self.action(sender)
     }
     

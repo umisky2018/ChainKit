@@ -17,6 +17,22 @@ class ViewController: UIViewController {
         self.view.chain
             .makeDefaultView()
         
+        let label = UILabel()
+        label.chain
+            .backgroundColor(.yellow)
+            .text("sample label")
+            .textAlignment(.center)
+            .text(color: .green)
+            .font(.boldSystemFont(ofSize: 30))
+            .numberOfLines(0)
+            .sizeToFit()
+            .add(to: self.view)
+            .origin(x: 100, y: 300)
+            .userInteractionEnabled(true)
+            .tap(action: {
+                print("响应")
+            })
+    
         UIButton(type: .system).chain
             .makeMainColor()
             .makeDefaultShdow()
@@ -25,13 +41,11 @@ class ViewController: UIViewController {
             .title(text: "Button", for: .normal)
             .title(front: .systemFont(ofSize: 24))
             .addAction(for: [.touchDown, .touchDragEnter], action: {
-                $0.chain
-                    .makeLightShdow()
+                $0  .makeLightShdow()
                     .title(front: .systemFont(ofSize: 22))
             })
             .addAction(for: [.touchUpOutside, .touchUpInside, .touchCancel, .touchDragExit], action: {
-                $0.chain
-                    .makeDefaultShdow()
+                $0  .makeDefaultShdow()
                     .title(front: .systemFont(ofSize: 24))
             })
             .add(to: self.view)
@@ -54,7 +68,7 @@ class ViewController: UIViewController {
             .add(to: self.view)
         
         UITapGestureRecognizer().chain
-            .addTapAction(action: { _ in
+            .addTapAction(action: { rec in
                 print("012")
             })
             .add(to: self.view)

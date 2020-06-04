@@ -26,10 +26,10 @@ extension Chain where Base: UITapGestureRecognizer {
 extension Chain where Base: UITapGestureRecognizer {
     
     @discardableResult
-    public func addTapAction(taps: Int = 1, touches: Int = 1, action: @escaping (Base) -> Void) -> Self {
+    public func addTapAction(taps: Int = 1, touches: Int = 1, action: @escaping (Chain<Base>) -> Void) -> Self {
         self.numberOfTapsRequired(taps)
             .numberOfTouchesRequired(touches)
-        self.addGestureAction(action: action)
+        self.addGestureAction(action: { action(Chain($0)) })
         return self
     }
 }

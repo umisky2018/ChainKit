@@ -141,7 +141,7 @@ extension Chain where Base: UIView {
     }
     
     @discardableResult
-    func sizeToFit() -> Self {
+    public func sizeToFit() -> Self {
         base.sizeToFit()
         return self
     }
