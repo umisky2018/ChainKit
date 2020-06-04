@@ -43,6 +43,15 @@ extension Chain where Base: UIGestureRecognizer {
     }
 }
 
+extension Chain where Base: UIGestureRecognizer {
+
+    @discardableResult
+    public func add(to view: UIView) -> Self {
+        view.addGestureRecognizer(base)
+        return self
+    }
+}
+
 // MARK: - Actions
 
 fileprivate var gestureRecognizerActionWrapperKey = "gestureRecognizerActionWrapperKey"
@@ -50,29 +59,28 @@ fileprivate var gestureRecognizerActionWrapperKey = "gestureRecognizerActionWrap
 extension Chain where Base: UIGestureRecognizer {
     
     @discardableResult
-    public func addAction(action: @escaping (UIGestureRecognizer) -> Void) -> Self {
+    public func addGestureAction(action: @escaping (Base) -> Void) -> Self {
         let wrapper = associatedObject(base, key: &gestureRecognizerActionWrapperKey, initial: { GestureRecognizerActionWrapper() })
-        wrapper.append(action: action)
+        wrapper.append { if let base = $0 as? Base { action(base) }}
         base.addTarget(wrapper, action: #selector(GestureRecognizerActionWrapper.executeAction(recognizer:)))
         return self
     }
     
     @discardableResult
-    public func removeAllActions() -> Self {
+    public func removeAllGestureActions() -> Self {
         let wrapper = associatedObject(base, key: &gestureRecognizerActionWrapperKey, initial: { GestureRecognizerActionWrapper() })
         wrapper.removeAllActions()
         return self
     }
 }
 
+// MARK: - Action Wrapper
 
-fileprivate class GestureRecognizerActionWrapper {
+fileprivate class GestureRecognizerActionWrapper<Sender: UIGestureRecognizer> {
     
     fileprivate typealias Action = (UIGestureRecognizer) -> Void
     
     fileprivate var actions: [Action] = []
-    
-    fileprivate init() { }
     
     fileprivate func append(action: @escaping Action) {
         self.actions.append(action)

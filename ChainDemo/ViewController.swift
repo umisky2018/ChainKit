@@ -16,22 +16,29 @@ class ViewController: UIViewController {
         
         self.view.chain
             .makeDefaultView()
-        
-        UIButton().chain
+                
+        UIView().chain
             .makeMainColor()
             .makeDefaultShdow()
             .frame(x: 100, y: 200, width: 200, height: 100)
             .corner(radius: 50)
-//            .addTap(target: self, action: #selector(aaa))
-            .addAction(action: { _ in
+            .tap(action: {
                 print("456")
             })
+            .tap(action: { [weak self] in
+                guard let this = self else { return }
+                this.navigationController?.pushViewController(ViewController(), animated: true)
+            })
+            .tap(action: {
+                print("789")
+            })
             .add(to: self.view)
-    }
-    
-    @objc
-    func aaa() {
-        print("123")
+        
+        UITapGestureRecognizer().chain
+            .addTapAction(action: { _ in
+                print("012")
+            })
+            .add(to: self.view)
     }
     
     deinit {
