@@ -76,7 +76,7 @@ extension Chain where Base: UIGestureRecognizer {
 
 // MARK: - Action Wrapper
 
-fileprivate class GestureRecognizerActionWrapper<Sender: UIGestureRecognizer> {
+fileprivate class GestureRecognizerActionWrapper {
     
     fileprivate typealias Action = (UIGestureRecognizer) -> Void
     
@@ -93,5 +93,9 @@ fileprivate class GestureRecognizerActionWrapper<Sender: UIGestureRecognizer> {
     @objc
     fileprivate func executeAction(recognizer: UITapGestureRecognizer) {
         self.actions.forEach{ $0(recognizer) }
+    }
+    
+    deinit {
+        logger("deinit \(type(of: self))")
     }
 }

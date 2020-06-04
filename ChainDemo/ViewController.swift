@@ -16,6 +16,13 @@ class ViewController: UIViewController {
         
         self.view.chain
             .makeDefaultView()
+        
+        UIButton().chain
+            .makeMainColor()
+            .makeDefaultShdow()
+            .frame(x: 100, y: 500, width: 200, height: 45)
+            .addTarget(self, action: #selector(aaa))
+            .add(to: self.view)
                 
         UIView().chain
             .makeMainColor()
@@ -41,7 +48,12 @@ class ViewController: UIViewController {
             .add(to: self.view)
     }
     
+    @objc
+    func aaa() {
+        print("123")
+    }
+    
     deinit {
-        print("销毁 vc")
+        print("deinit \(type(of: self))")
     }
 }

@@ -41,3 +41,10 @@ internal func getAssociatedObject<T>(_ host: Any, key: UnsafeRawPointer) -> T? {
     let value = objc_getAssociatedObject(host, key) as? T
     return value
 }
+
+/// 日志
+internal func logger(_ item: Any) {
+    #if DEBUG
+    print(item)
+    #endif
+}
