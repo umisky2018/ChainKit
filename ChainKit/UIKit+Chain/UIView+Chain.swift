@@ -15,8 +15,8 @@ extension UIView: ChainCompatible { }
 extension Chain where Base: UIView {
     
     @discardableResult
-    public func userInteraction(enabled: Bool) -> Self {
-        base.isUserInteractionEnabled = enabled
+    public func userInteractionEnabled(_ userInteractionEnabled: Bool) -> Self {
+        base.isUserInteractionEnabled = userInteractionEnabled
         return self
     }
     
@@ -45,44 +45,44 @@ extension Chain where Base: UIView {
     }
     
     @discardableResult
-    public func multipleTouch(enabled: Bool) -> Self {
-        base.isMultipleTouchEnabled = enabled
+    public func multipleTouchEnabled(_ multipleTouchEnabled: Bool) -> Self {
+        base.isMultipleTouchEnabled = multipleTouchEnabled
         return self
     }
     
     @discardableResult
-    public func exclusiveTouch(_ enable: Bool) -> Self {
-        base.isExclusiveTouch = enable
+    public func exclusiveTouch(_ exclusiveTouch: Bool) -> Self {
+        base.isExclusiveTouch = exclusiveTouch
         return self
     }
     
     @discardableResult
-    public func autoresizesSubviews(_ enable: Bool) -> Self {
-        base.autoresizesSubviews = enable
+    public func autoresizesSubviews(_ autoresizesSubviews: Bool) -> Self {
+        base.autoresizesSubviews = autoresizesSubviews
         return self
     }
     
     @discardableResult
-    public func autoresizingMask(_ mask: UIView.AutoresizingMask) -> Self {
-        base.autoresizingMask = mask
+    public func autoresizingMask(_ autoresizingMask: UIView.AutoresizingMask) -> Self {
+        base.autoresizingMask = autoresizingMask
         return self
     }
     
     @discardableResult
-    public func layoutMargins(_ margins: UIEdgeInsets) -> Self {
-        base.layoutMargins = margins
+    public func layoutMargins(_ layoutMargins: UIEdgeInsets) -> Self {
+        base.layoutMargins = layoutMargins
         return self
     }
     
     @discardableResult
-    public func clipsToBounds(_ enable: Bool) -> Self {
-        base.clipsToBounds = enable
+    public func clipsToBounds(_ clipsToBounds: Bool) -> Self {
+        base.clipsToBounds = clipsToBounds
         return self
     }
     
     @discardableResult
-    public func background(color: UIColor) -> Self {
-        base.backgroundColor = color
+    public func backgroundColor(_ backgroundColor: UIColor) -> Self {
+        base.backgroundColor = backgroundColor
         return self
     }
     
@@ -93,20 +93,20 @@ extension Chain where Base: UIView {
     }
     
     @discardableResult
-    public func hidden(_ isHidden: Bool) -> Self {
+    public func isHidden(_ isHidden: Bool) -> Self {
         base.isHidden = isHidden
         return self
     }
     
     @discardableResult
-    public func opaque(_ isOpaque: Bool) -> Self {
+    public func isOpaque(_ isOpaque: Bool) -> Self {
         base.isOpaque = isOpaque
         return self
     }
     
     @discardableResult
-    public func content(mode: UIView.ContentMode) -> Self {
-        base.contentMode = mode
+    public func contentMode(_ contentMode: UIView.ContentMode) -> Self {
+        base.contentMode = contentMode
         return self
     }
     
@@ -117,14 +117,14 @@ extension Chain where Base: UIView {
     }
     
     @discardableResult
-    public func tint(color: UIColor) -> Self {
-        base.tintColor = color
+    public func tintColor(_ tintColor: UIColor) -> Self {
+        base.tintColor = tintColor
         return self
     }
     
     @discardableResult
-    public func tint(adjustmentMode: UIView.TintAdjustmentMode) -> Self {
-        base.tintAdjustmentMode = adjustmentMode
+    public func tintAdjustmentMode(_ tintAdjustmentMode: UIView.TintAdjustmentMode) -> Self {
+        base.tintAdjustmentMode = tintAdjustmentMode
         return self
     }
     
@@ -181,7 +181,7 @@ extension Chain where Base: UIView {
         base.layer.shadowColor = color.cgColor
         return self
     }
-    
+        
     @discardableResult
     public func shadow(offset: CGSize) -> Self {
         base.layer.shadowOffset = offset
@@ -245,19 +245,32 @@ extension Chain where Base: UIView {
     
     @discardableResult
     public func origin(x: CGFloat, y: CGFloat) -> Self {
+        self.origin(CGPoint(x: x, y: y))
+        return self
+    }
+    
+    @discardableResult
+    public func origin(_ origin: CGPoint) -> Self {
         var frame = base.frame
-        frame.origin = CGPoint(x: x, y: y)
+        frame.origin = origin
         base.frame = frame
         return self
     }
     
     @discardableResult
     public func size(width: CGFloat, height: CGFloat) -> Self {
+        self.size(CGSize(width: width, height: height))
+        return self
+    }
+    
+    @discardableResult
+    public func size(_ size: CGSize) -> Self {
         var frame = base.frame
-        frame.size = CGSize(width: width, height: height)
+        frame.size = size
         base.frame = frame
         return self
     }
+
     
     @discardableResult
     public func frame(x: CGFloat = 0, y: CGFloat = 0, width: CGFloat, height: CGFloat) -> Self {

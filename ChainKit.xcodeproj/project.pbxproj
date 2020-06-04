@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C18C64A24837C8800C01A77 /* Associate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18C64924837C8800C01A77 /* Associate.swift */; };
 		2C4CB97F2487B93E009EE6B2 /* UITapGestureRecognizer+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CB97E2487B93E009EE6B2 /* UITapGestureRecognizer+Chain.swift */; };
+		2C947B1D248939F80048828D /* UIImage+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C947B1C248939F80048828D /* UIImage+Chain.swift */; };
 		2CBE203D24783D710071BF1B /* ChainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBE203B24783D710071BF1B /* ChainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CBE204624783F380071BF1B /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204524783F380071BF1B /* Chain.swift */; };
 		2CBE204B247842410071BF1B /* UIView+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE204A247842410071BF1B /* UIView+Chain.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		2C18C64924837C8800C01A77 /* Associate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associate.swift; sourceTree = "<group>"; };
 		2C4CB97E2487B93E009EE6B2 /* UITapGestureRecognizer+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Chain.swift"; sourceTree = "<group>"; };
+		2C947B1C248939F80048828D /* UIImage+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Chain.swift"; sourceTree = "<group>"; };
 		2CBE203824783D710071BF1B /* ChainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE203B24783D710071BF1B /* ChainKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainKit.h; sourceTree = "<group>"; };
 		2CBE203C24783D710071BF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				2CBE20502478444A0071BF1B /* UIButton+Chain.swift */,
 				2CCBEEC42487B56E00CA0B50 /* UIGestureRecognizer+Chain.swift */,
 				2C4CB97E2487B93E009EE6B2 /* UITapGestureRecognizer+Chain.swift */,
+				2C947B1C248939F80048828D /* UIImage+Chain.swift */,
 			);
 			path = "UIKit+Chain";
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBE204F247844020071BF1B /* UILabel+Chain.swift in Sources */,
+				2C947B1D248939F80048828D /* UIImage+Chain.swift in Sources */,
 				2C4CB97F2487B93E009EE6B2 /* UITapGestureRecognizer+Chain.swift in Sources */,
 				2CBE20512478444A0071BF1B /* UIButton+Chain.swift in Sources */,
 				2C18C64A24837C8800C01A77 /* Associate.swift in Sources */,

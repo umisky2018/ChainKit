@@ -25,20 +25,20 @@ extension Chain where Base: UIGestureRecognizer {
     }
     
     @discardableResult
-    public func cancelsTouchesInView(enable: Bool) -> Self {
-        base.cancelsTouchesInView = enable
+    public func cancelsTouchesInView(_ cancelsTouchesInView: Bool) -> Self {
+        base.cancelsTouchesInView = cancelsTouchesInView
         return self
     }
 
     @discardableResult
-    public func delaysTouchesBegan(enable: Bool) -> Self {
-        base.delaysTouchesBegan = enable
+    public func delaysTouchesBegan(_ delaysTouchesBegan: Bool) -> Self {
+        base.delaysTouchesBegan = delaysTouchesBegan
         return self
     }
     
     @discardableResult
-    public func delaysTouchesEnded(enable: Bool) -> Self {
-        base.delaysTouchesEnded = enable
+    public func delaysTouchesEnded(_ delaysTouchesEnded: Bool) -> Self {
+        base.delaysTouchesEnded = delaysTouchesEnded
         return self
     }
 }

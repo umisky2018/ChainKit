@@ -13,7 +13,7 @@ extension Chain where Base: UIView {
 
     @discardableResult
     func makeDefaultView() -> Self {
-        self.background(color: Theme.current.backgroundColor)
+        self.backgroundColor(Theme.current.backgroundColor)
         return self
     }
 
@@ -37,8 +37,7 @@ extension Chain where Base: UIView {
     
     @discardableResult
     func makeMainColor() -> Self {
-        self.background(color: Theme.current.mainColor)
+        self.backgroundColor(Theme.current.mainColor)
         return self
     }
-
 }

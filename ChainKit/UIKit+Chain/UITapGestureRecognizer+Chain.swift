@@ -11,14 +11,14 @@ import UIKit
 extension Chain where Base: UITapGestureRecognizer {
 
     @discardableResult
-    public func numberOfTapsRequired(_ number: Int) -> Self {
-        base.numberOfTapsRequired = number
+    public func numberOfTapsRequired(_ numberOfTapsRequired: Int) -> Self {
+        base.numberOfTapsRequired = numberOfTapsRequired
         return self
     }
     
     @discardableResult
-    public func numberOfTouchesRequired(_ number: Int) -> Self {
-        base.numberOfTouchesRequired = number
+    public func numberOfTouchesRequired(_ numberOfTouchesRequired: Int) -> Self {
+        base.numberOfTouchesRequired = numberOfTouchesRequired
         return self
     }
 }

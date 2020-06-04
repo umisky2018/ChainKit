@@ -43,8 +43,8 @@ extension Chain where Base: UILabel {
     }
     
     @discardableResult
-    public func text(alignment: NSTextAlignment) -> Self {
-        base.textAlignment = alignment
+    public func textAlignment(_ textAlignment: NSTextAlignment) -> Self {
+        base.textAlignment = textAlignment
         return self
     }
     
@@ -67,7 +67,7 @@ extension Chain where Base: UILabel {
     }
     
     @discardableResult
-    public func highlighted(_ isHighlighted: Bool) -> Self {
+    public func isHighlighted(_ isHighlighted: Bool) -> Self {
         base.isHighlighted = isHighlighted
         return self
     }

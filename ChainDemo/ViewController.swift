@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             .addAction(for: [.touchDown, .touchDragEnter], action: {
                 $0.chain
                     .makeLightShdow()
-                    .title(front: .systemFont(ofSize: 20))
+                    .title(front: .systemFont(ofSize: 22))
             })
             .addAction(for: [.touchUpOutside, .touchUpInside, .touchCancel, .touchDragExit], action: {
                 $0.chain
@@ -35,11 +35,11 @@ class ViewController: UIViewController {
                     .title(front: .systemFont(ofSize: 24))
             })
             .add(to: self.view)
-                
-        UIView().chain
+        
+         let v = UIView().chain
             .makeMainColor()
             .makeDefaultShdow()
-            .frame(x: 100, y: 200, width: 200, height: 100)
+            .frame(x: 100, y: 200, width: 200, height: 40)
             .corner(radius: 50)
             .tap(action: {
                 print("456")
@@ -52,6 +52,11 @@ class ViewController: UIViewController {
                 print("789")
             })
             .add(to: self.view)
+            .clipsToBounds(true)
+            .base
+        
+        UIImageView(image: UIImage(named: "cheerUp")).chain
+            .add(to: v)
         
         UITapGestureRecognizer().chain
             .addTapAction(action: { _ in

@@ -29,8 +29,8 @@ extension Chain where Base: UIButton {
     }
     
     @discardableResult
-    public func reversesTitleShadowWhenHighlighted(enable: Bool) -> Self {
-        base.reversesTitleShadowWhenHighlighted = enable
+    public func reversesTitleShadowWhenHighlighted(_ reversesTitleShadowWhenHighlighted: Bool) -> Self {
+        base.reversesTitleShadowWhenHighlighted = reversesTitleShadowWhenHighlighted
         return self
     }
     
@@ -41,20 +41,20 @@ extension Chain where Base: UIButton {
     }
     
     @discardableResult
-    public func adjustsImageWhenHighlighted(enable: Bool) -> Self {
-        base.adjustsImageWhenHighlighted = enable
+    public func adjustsImageWhenHighlighted(_ adjustsImageWhenHighlighted: Bool) -> Self {
+        base.adjustsImageWhenHighlighted = adjustsImageWhenHighlighted
         return self
     }
     
     @discardableResult
-    public func adjustsImageWhenDisabled(enable: Bool) -> Self {
-        base.adjustsImageWhenDisabled = enable
+    public func adjustsImageWhenDisabled(_ adjustsImageWhenDisabled: Bool) -> Self {
+        base.adjustsImageWhenDisabled = adjustsImageWhenDisabled
         return self
     }
     
     @discardableResult
-    public func showsTouchWhenHighlighted(enable: Bool) -> Self {
-        base.showsTouchWhenHighlighted = enable
+    public func showsTouchWhenHighlighted(_ showsTouchWhenHighlighted: Bool) -> Self {
+        base.showsTouchWhenHighlighted = showsTouchWhenHighlighted
         return self
     }
     
@@ -89,14 +89,14 @@ extension Chain where Base: UIButton {
     }
     
     @discardableResult
-    public func backgroundImage(_ image: UIImage?, for state: UIControl.State) -> Self {
-        base.setBackgroundImage(image, for: state)
+    public func backgroundImage(_ backgroundImage: UIImage?, for state: UIControl.State) -> Self {
+        base.setBackgroundImage(backgroundImage, for: state)
         return self
     }
     
     @discardableResult
-    public func attributedTitle(_ title: NSAttributedString?, for state: UIControl.State) -> Self {
-        base.setAttributedTitle(title, for: state)
+    public func attributedTitle(_ attributedTitle: NSAttributedString?, for state: UIControl.State) -> Self {
+        base.setAttributedTitle(attributedTitle, for: state)
         return self
     }
     
