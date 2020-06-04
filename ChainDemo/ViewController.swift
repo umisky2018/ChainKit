@@ -19,15 +19,8 @@ class ViewController: UIViewController {
         
         let label = UILabel()
         label.chain
-            .backgroundColor(.yellow)
-            .text("sample label")
-            .textAlignment(.center)
-            .text(color: .green)
-            .font(.boldSystemFont(ofSize: 30))
-            .numberOfLines(0)
-            .sizeToFit()
+            .makeDefaultLabel()
             .add(to: self.view)
-            .origin(x: 100, y: 300)
             .userInteractionEnabled(true)
             .tap(action: {
                 print("响应")

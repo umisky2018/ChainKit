@@ -41,3 +41,19 @@ extension Chain where Base: UIView {
         return self
     }
 }
+
+extension Chain where Base: UILabel {
+    
+    @discardableResult
+    public func makeDefaultLabel() -> Self {
+        self.backgroundColor(.yellow)
+            .text("sample label")
+            .textAlignment(.center)
+            .text(color: .green)
+            .font(.boldSystemFont(ofSize: 30))
+            .numberOfLines(0)
+            .sizeToFit()
+            .origin(x: 100, y: 300)
+        return self
+    }
+}
