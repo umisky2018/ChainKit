@@ -25,11 +25,13 @@ class ViewController: UIViewController {
             .title(text: "Button", for: .normal)
             .title(front: .systemFont(ofSize: 24))
             .addAction(for: [.touchDown, .touchDragEnter], action: {
-                $0.chain.makeLightShdow()
-                $0.chain.title(front: .systemFont(ofSize: 20))
+                $0.chain
+                    .makeLightShdow()
+                    .title(front: .systemFont(ofSize: 20))
             })
             .addAction(for: [.touchUpOutside, .touchUpInside, .touchCancel, .touchDragExit], action: {
-                $0.chain.makeDefaultShdow()
+                $0.chain
+                    .makeDefaultShdow()
                     .title(front: .systemFont(ofSize: 24))
             })
             .add(to: self.view)
