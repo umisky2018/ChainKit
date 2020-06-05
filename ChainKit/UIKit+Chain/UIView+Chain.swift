@@ -358,6 +358,7 @@ extension Chain where Base: UIView {
     public func removeAllTapAction() -> Self {
         let tap: UITapGestureRecognizer? = getAssociatedObject(base, key: &tapGestureRecognizerWrapperKey)
         tap?.chain.removeAllGestureActions()
+        base.gestureRecognizers?.forEach { base.removeGestureRecognizer($0) }
         return self
     }
 }
