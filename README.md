@@ -1,6 +1,12 @@
 # ChainKit
 Swift 链式编程库，持续更新中……
 
+感谢：
+[ChainKit](https://github.com/avario/ChainKit) | 
+[KMUIMaker](https://github.com/hkm5558/KMUIMaker) | 
+[ApplyStyleKit](https://github.com/shindyu/ApplyStyleKit) | 
+[BlockKit](https://github.com/BlocksKit/BlocksKit) 
+
 ![License](https://img.shields.io/cocoapods/l/ApplyStyleKit.svg?style=flat)
 ![Platform](https://img.shields.io/cocoapods/p/ApplyStyleKit.svg?style=flat)
 
